@@ -96,9 +96,9 @@ public class Elevator {
       personInElevator.chooseFloor();
     }
   }
-
   private void getIn() {
     Floor floor = getFloor(currentFloor);
+
     if (direction == Direction.UP) {
       while (floor.getPeopleList().stream()
           .anyMatch(person -> person.getDesiredFloor() > currentFloor)
@@ -119,5 +119,4 @@ public class Elevator {
       }
     }
   }
-
 }
