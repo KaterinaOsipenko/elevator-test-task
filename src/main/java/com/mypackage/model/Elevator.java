@@ -1,4 +1,4 @@
-package model;
+package com.mypackage.model;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -96,6 +96,7 @@ public class Elevator {
       personInElevator.chooseFloor();
     }
   }
+
   private void getIn() {
     Floor floor = getFloor(currentFloor);
 

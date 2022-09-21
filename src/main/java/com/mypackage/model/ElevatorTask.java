@@ -1,5 +1,4 @@
-import model.Building;
-import model.Elevator;
+package com.mypackage.model;
 
 public class ElevatorTask {
 

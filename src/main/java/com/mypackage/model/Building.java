@@ -1,10 +1,13 @@
-package model;
+package com.mypackage.model;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Random;
 
 public class Building {
 
+  private static final int MAX_FLOOR = 21;
+  private static final int MIN_FLOOR = 5;
   private static Building building = null;
   private List<Floor> floorsList;
   private Elevator elevator;
@@ -26,7 +29,8 @@ public class Building {
   }
 
   public void start() {
-    int floors = (int) (Math.random() * (21 - 5 + 1) + 5);
+    Random random = new Random();
+    int floors = random.nextInt((MAX_FLOOR - MIN_FLOOR) + 1) + MIN_FLOOR;
     setMaxFloor(floors);
     createFloors();
     elevator.start();

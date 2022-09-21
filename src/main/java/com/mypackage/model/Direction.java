@@ -1,4 +1,4 @@
-package model;
+package com.mypackage.model;
 
 public enum Direction {
 
