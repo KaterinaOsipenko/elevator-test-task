@@ -12,22 +12,18 @@ public class Building {
   private List<Floor> floorsList;
   private Elevator elevator;
   private int maxFloor;
-
   private Building() {
     System.out.println("Building create");
   }
-
   public static Building getInstance() {
     if (building == null) {
       building = new Building();
     }
     return building;
   }
-
   public void setElevator(Elevator elevator) {
     this.elevator = elevator;
   }
-
   public void start() {
     Random random = new Random();
     int floors = random.nextInt((MAX_FLOOR - MIN_FLOOR) + 1) + MIN_FLOOR;
@@ -35,19 +31,15 @@ public class Building {
     createFloors();
     elevator.start();
   }
-
   public int getMaxFloor() {
     return maxFloor;
   }
-
   public void setMaxFloor(int maxFloor) {
     this.maxFloor = maxFloor;
   }
-
   public List<Floor> getFloorsList() {
     return floorsList;
   }
-
   private void createFloors() {
     System.out.println("Create floors " + maxFloor);
     floorsList = new ArrayList<>(maxFloor);

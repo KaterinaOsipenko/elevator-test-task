@@ -12,20 +12,17 @@ public class Elevator {
   private Direction direction;
   private int currentFloor;
   private List<Integer> desiredFloors;
-
   public Elevator() {
     step = 1;
     direction = Direction.UP;
     personList = new ArrayList<>();
   }
-
   public void start() {
     currentFloor = getFloor(1).getLabel();
     getIn();
     getAllFloors();
     ride();
   }
-
   private void ride() {
     if (step > 100) {
       System.out.println("Elevator sleep!!");
@@ -47,7 +44,6 @@ public class Elevator {
     }
     ride();
   }
-
   private void displayStep() {
     StringBuilder steps = new StringBuilder();
     steps.append("\t\t\tStep ").append(step).append("\n");
@@ -67,12 +63,10 @@ public class Elevator {
     step++;
     System.out.println(steps);
   }
-
   private Floor getFloor(int label) {
     return building.getFloorsList().stream().filter(floor -> floor.getLabel() == label).findAny()
         .get();
   }
-
   private void getAllFloors() {
     if (desiredFloors == null) {
       desiredFloors = new ArrayList<>();
@@ -83,7 +77,6 @@ public class Elevator {
       desiredFloors.add(person.getDesiredFloor());
     }
   }
-
   private void getOut() {
     Floor floor = getFloor(currentFloor);
     while (personList.stream().anyMatch(person -> person.getDesiredFloor() == currentFloor)) {
@@ -96,7 +89,6 @@ public class Elevator {
       personInElevator.chooseFloor();
     }
   }
-
   private void getIn() {
     Floor floor = getFloor(currentFloor);
 
